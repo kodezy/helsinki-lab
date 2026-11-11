@@ -24,6 +24,8 @@ The repository root holds documentation and ignore rules only. Application code 
 | `partN/<app>` | One exercise app: dependencies, build, and runtime. |
 | Root | Docs and `.gitignore` only. |
 
+Do not add `README.md` (or other repo docs) under `part0/` or `partN/`. The course submission layout is folders plus exercise content only; documentation for the repo lives at the root.
+
 Do not place multiple parts in one app folder or merge unrelated exercises into a single project.
 
 ## Dependencies

@@ -20,6 +20,8 @@ part2
 
 `part0` holds notes and diagrams. From part 1 on, each exercise folder is its own app with a `package.json`.
 
+Full Stack Open does not require a `README` inside `part0`, `part1`, or any `partN/<app>` folder. Keep only exercise files and app code there. Repository-level docs stay in the root (`README.md`, `ARCHITECTURE.md`, `AGENTS.md`).
+
 ## Development
 
 From part 1:
