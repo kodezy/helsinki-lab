@@ -2,53 +2,36 @@
 
 ## Purpose
 
-Hold Full Stack Open submissions in the directory layout the course uses for GitHub review. Each exercise app is independent.
+Store Full Stack Open submissions in the directory structure the course uses for GitHub-based review. Each exercise group is a small standalone application rather than a single unified codebase.
 
-## System map
-
-**Planned** (created only when that part is in progress):
+## Layout
 
 ```text
-part0/                 diagrams and notes for part 0
-partN/<app>/           one app per exercise group (courseinfo, unicafe, ...)
+part0/              Part 0: notes and diagrams
+partN/<app>/        Parts 1+: one app per exercise group
 ```
 
-**Implemented:**
+Examples for part 1: `courseinfo`, `unicafe`, `anecdotes`. Later parts follow the same pattern with the names given by the course.
 
-```text
-README.md
-AGENTS.md
-ARCHITECTURE.md
-.gitignore
-```
-
-No shared `src/`, `apps/`, or root `package.json`.
+The repository root holds documentation and ignore rules only. Application code and `node_modules` live under `partN/<app>/`.
 
 ## Boundaries
 
-- `partN` — one course part. Do not mix parts in the same app folder.
-- `partN/<app>` — one exercise group. Owns its own dependencies, scripts, and build.
-- Root docs — repo purpose, agent rules, and this map. Not application code.
+| Path | Responsibility |
+| --- | --- |
+| `part0` | Notes and diagrams; typically no `package.json`. |
+| `partN` | Work for one course part. |
+| `partN/<app>` | One exercise app: dependencies, build, and runtime. |
+| Root | Docs and `.gitignore` only. |
 
-## Dependency direction
+Do not place multiple parts in one app folder or merge unrelated exercises into a single project.
 
-Allowed:
+## Dependencies
 
-- An app depends on libraries introduced by that part (or allowed by the exercise).
+Each app manages its own dependencies. Allowed libraries are those appropriate to the course part and the exercise. Avoid pulling in tools or patterns from later parts early.
 
-Forbidden:
-
-- Root workspace linking apps together.
-- Sharing source across parts to “save time”.
-- Libraries the current part has not introduced, unless the exercise says so.
+The repository does not use a root workspace, shared `src/`, or cross-part imports.
 
 ## Verification
 
-Architecture checks:
-none
-
-Fast check:
-whatever `package.json` scripts exist in the app being edited (typically `npm run dev` / `npm test`)
-
-Tests:
-per-app, only when that app has tests
+There is no repo-level build or test command. Validate by running the scripts in the app you changed—typically `npm run dev` and any tests that exercise adds.

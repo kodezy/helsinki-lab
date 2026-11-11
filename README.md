@@ -1,12 +1,10 @@
 # helsinki-lab
 
-Exercise submissions for [Full Stack Open](https://fullstackopen.com/en/).
+Exercise submissions for [Full Stack Open](https://fullstackopen.com/en/). Directories follow the course’s recommended layout for GitHub review.
 
-This is a study repo. Folders appear as each part is started, not as empty placeholders.
+Add folders when you start each part or exercise group.
 
 ## Layout
-
-The course expects one GitHub repo (or several) with directories named by part and app:
 
 ```text
 part0
@@ -20,18 +18,23 @@ part2
   countries
 ```
 
-`part0` holds diagrams and notes. Later parts hold one Vite/React (or Node) app per exercise group, each with its own `package.json`.
+`part0` holds notes and diagrams. From part 1 on, each exercise folder is its own app with a `package.json`.
 
-Run an app from its folder. There is no root toolchain.
+## Development
 
-## Submit
+From part 1:
 
-1. Push the work to this repository.
-2. Mark completed exercises in the [submission system](https://studies.cs.helsinki.fi/stats/courses/fullstackopen).
+```bash
+cd part1/courseinfo
+npm install
+npm run dev
+```
 
-Course rules: [submitting exercises](https://fullstackopen.com/en/part0/fundamentals_of_web_apps#submitting-exercises).
+There is no root `package.json` or shared scripts.
 
-## Docs
+## Submission
 
-- [AGENTS.md](AGENTS.md) — how coding agents should work in this repo
-- [ARCHITECTURE.md](ARCHITECTURE.md) — layout and boundaries
+1. Push to this repository.
+2. Mark exercises complete in the [submission system](https://studies.cs.helsinki.fi/stats/courses/fullstackopen).
+
+See [submitting exercises](https://fullstackopen.com/en/part0/fundamentals_of_web_apps#submitting-exercises) on the course site.
